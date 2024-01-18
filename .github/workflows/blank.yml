@@ -12,14 +12,14 @@ jobs:
           uses: actions/checkout@v4
 
         - name: main
-          if: ${{ github.ref }} == 'refs/heads/main'
+          if: ${{ github.event.ref == 'main' }}
           shell: bash
           run: |
             echo ${{ github.ref }}
           
 
         - name: master
-          if: ${{ github.ref }} == 'refs/heads/master'
+          if: ${{ github.event.ref == 'master' }}
           shell: bash
           run: |
             echo ${{ github.ref }}
